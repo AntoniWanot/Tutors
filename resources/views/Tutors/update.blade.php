@@ -11,39 +11,63 @@
 <body>
     <div class="container">
         <div class="nav">
-            <a href="/">Strona główna</a>
-            <a href="{{ route('tutors.list') }}">Lista</a>
+            <a href="/">
+                <h1>Strona główna</h1>
+            </a>
+            <a href="{{ route('tutors.list') }}">
+                <h2>Lista</h2>
+            </a>
         </div>
-        <form action="{{ route('tutors.update') }}" method="post">
+        <form action="{{ route('tutors.update', ['id' => $tutor->id]) }}" method="post">
             @csrf
             <table>
                 <tbody>
                     <tr>
-                        <td><label for="name">Imie i nazwisko</label><input type="text" name="name" id="name"></td>
+                        <td>
+                            <label for="name">Imie i nazwisko</label>
+                            <input type="text" name="name" id="name" value="{{ $tutor->name }}">
+                        </td>
                     </tr>
                     <tr>
-                        <td><label for="email">Email</label><input type="text" name="email" id="email"></td>
+                        <td>
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="email" value="{{ $tutor->email }}">
+                        </td>
                     </tr>
                     <tr>
-                        <td><label for="phone_number">Numer telefonu</label><input type="text" name="phone_number"
-                                id="phone_number"></td>
+                        <td>
+                            <label for="phone_number">Numer telefonu</label>
+                            <input type="text" name="phone_number" id="phone_number"
+                                value="{{ $tutor->phone_number }}">
+                        </td>
                     </tr>
                     <tr>
-                        <td><label for="subject">Przedmiot</label><input type="text" name="subject" id="subject"></td>
+                        <td>
+                            <label for="subject">Przedmiot</label>
+                            <input type="text" name="subject" id="subject" value="{{ $tutor->subject }}">
+                        </td>
                     </tr>
                     <tr>
-                        <td><label for="rating">Ocena</label><input type="text" name="rating" id="rating"></td>
+                        <td>
+                            <label for="rating">Ocena</label>
+                            <input type="text" name="rating" id="rating" value="{{ $tutor->rating }}">
+                        </td>
                     </tr>
                     <tr>
-                        <td><label for="degree">Wykształcenie</label><input type="text" name="degree" id="degree"></td>
+                        <td>
+                            <label for="degree">Wykształcenie</label>
+                            <input type="text" name="degree" id="degree" value="{{ $tutor->degree }}">
+                        </td>
                     </tr>
                     <tr>
-                        <td><label for="experience">Doświadczenie</label><input type="text" name="experience"
-                                id="experience"></td>
+                        <td>
+                            <label for="experience">Doświadczenie</label>
+                            <input type="text" name="experience" id="experience" value="{{ $tutor->experience }}">
+                        </td>
                     </tr>
-                    <tr><button type="submit">Edytuj</button></tr>
                 </tbody>
             </table>
+            <div><button type="submit">Edytuj</button></div>
         </form>
     </div>
 </body>

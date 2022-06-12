@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show</title>
+    <title>Korepetytor</title>
 </head>
 
 <body>
@@ -16,6 +16,9 @@
             </a>
             <a href="{{ route('tutors.list') }}">
                 <h2>Lista</h2>
+            </a>
+            <a href="{{ route('tutors.list') }}">
+                <h2>Wyślij maila(na razie lista)</h2>
             </a>
         </div>
         <div class="tutor_data">
@@ -51,6 +54,11 @@
                     </tr>
                 </tbody>
             </table>
+            <div>
+                <a href="{{ route('tutors.update', ['id' => $tutor->id]) }}">
+                    <h4>Edytuj rejestr</h4>
+                </a>
+            </div>
         </div>
     </div>
 </body>

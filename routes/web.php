@@ -18,6 +18,7 @@ use App\Http\Controllers\Tutors\TutorsController;
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
+
     route::group(['prefix' => '/tutors/', 'as' => 'tutors.'], function () {
 
         Route::get('list', [App\Http\Controllers\Tutors\TutorsController::class, 'list'])->name('list');
@@ -31,5 +32,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('update/{id}', [App\Http\Controllers\Tutors\TutorController::class, 'getUpdateView'])->name('getUpdateView');
         Route::post('update/{id}', [App\Http\Controllers\Tutors\TutorController::class, 'update'])->name('update');
     });
+
     Route::get('/{any}', [App\Http\Controllers\HomeController::class, 'HomePage'])->where('any', '.*');;
 });

@@ -18,6 +18,7 @@ class Tutor extends Model
 
     public function scopeFilterBySubject($query, $subject)
     {
-        return $query->where('subject', 'like', '%' . $subject . '%');
+        return $query->where('subject')
+            ->orWhere('subject', 'like', '%' . $subject . '%');
     }
 }

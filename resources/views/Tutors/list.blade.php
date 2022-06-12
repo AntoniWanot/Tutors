@@ -15,7 +15,7 @@
                 <h1>Strona główna</h1>
             </a>
             <a href="{{ route('tutors.create') }}">
-                <h2>Dodaj</h2>
+                <h2>Dodaj korepetytora</h2>
             </a>
         </div>
         <div class="list">
@@ -27,7 +27,12 @@
                     </div>
                     <div class="filter" style="display:inline-block; margin right: 10px;">
                         <label for="subject">Przedmiot</label>
-                        <input type="select" name="subject" id="subject">
+                        <input list="subject" type="text">
+                        <datalist id="subject">
+                            @foreach ($tutors as $tutor)
+                                <option value="{{ $tutor->subject }}">
+                            @endforeach
+                        </datalist>
                     </div>
                     <div class="button" style="display:inline-block;">
                         <button type="submit">Filtruj</button>
@@ -42,8 +47,8 @@
                         <th>Przedmiot</th>
                         <th>Ocena</th>
                         <th>Szczegóły</th>
-                        <th>Usuń</th>
                         <th>Edytuj</th>
+                        <th>Usuń</th>
                     </tr>
                 </thead>
                 <tbody>

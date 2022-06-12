@@ -11,8 +11,12 @@
 <body>
     <div class="container">
         <div class="nav">
-            <a href="/">Strona główna</a>
-            <a href="{{ route('tutors.list') }}">Lista</a>
+            <a href="/">
+                <h1>Strona główna</h1>
+            </a>
+            <a href="{{ route('tutors.list') }}">
+                <h2>Lista</h2>
+            </a>
         </div>
         <form action="{{ route('tutors.create') }}" method="post">
             @csrf
@@ -41,9 +45,9 @@
                         <td><label for="experience">Doświadczenie</label><input type="text" name="experience"
                                 id="experience"></td>
                     </tr>
-                    <tr><button type="submit">Dodaj</button></tr>
                 </tbody>
             </table>
+            <div><button type="submit">Dodaj</button></div>
         </form>
     </div>
 </body>
